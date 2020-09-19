@@ -19,11 +19,16 @@ module.exports = function(environment) {
 
     API_KEY: process.env.API_KEY,
     API_URL: process.env.API_URL,
+    API_NAMESPACE: process.env.API_NAMESPACE,
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    fastboot: {
+      hostWhitelist: ['api.giphy.com', /^localhost:\d+$/, /^192.168.86.53:\d+$/]
+    }
   };
 
   if (environment === 'development') {
