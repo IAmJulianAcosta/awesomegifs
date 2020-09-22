@@ -1,7 +1,7 @@
 # Julian Acosta take home test
 
 ## Run
-- `git clone git@github.com:IAmJulianAcosta/awesome-gifs.git`
+- `git clone git@github.com:IAmJulianAcosta/awesomegifs.git`
 - rename `.env.example` to `.env`
 - add your giphy API key to `.env`
 - `ember serve` 
