@@ -8,7 +8,7 @@
 - `npm install` 
 
 ## Online version
-Go to https://awesomegifs.julianacosta.me
+Go to http://awesomegifs.julianacosta.me
 
 ## TODO / Out of scope of the test
 - The API key is stored in the client, so it is exposed. Ideally requests should be proxied to prevent this

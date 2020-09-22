@@ -27,7 +27,7 @@ module.exports = function(environment) {
     },
 
     fastboot: {
-      hostWhitelist: ['api.giphy.com', /^localhost:\d+$/, /^192.168.86.53:\d+$/]
+      hostWhitelist: ['awesomegifs.julianacosta.me', /^localhost:\d+$/, /^192.168.86.53:\d+$/]
     }
   };
 
