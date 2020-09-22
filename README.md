@@ -4,8 +4,8 @@
 - `git clone git@github.com:IAmJulianAcosta/awesomegifs.git`
 - rename `.env.example` to `.env`
 - add your giphy API key to `.env`
-- `ember serve` 
 - `npm install` 
+- `ember serve` 
 
 ## Online version
 Go to http://awesomegifs.julianacosta.me
