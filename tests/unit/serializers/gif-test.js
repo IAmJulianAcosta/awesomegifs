@@ -15,7 +15,7 @@ module('Unit | Serializer | gif', function(hooks) {
     assert.equal(normalizedResponse.id, record.id);
     assert.equal(normalizedResponse.type, 'gif');
     assert.deepEqual(normalizedResponse.attributes, {
-      title: "Dog Love GIF by TikTok Italia",
+      title: "Dog Love",
       url: "https://giphy.com/gifs/TikTokItalia-divertente-animali-carini-JTaHahqEVizjwKuc7e",
       slug: "TikTokItalia-divertente-animali-carini-JTaHahqEVizjwKuc7e",
       sourceUrl: "https://www.tiktok.com/it/",

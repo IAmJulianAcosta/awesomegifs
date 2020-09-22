@@ -1,0 +1,70 @@
+<div local-class="search">
+  <input
+      type="text" placeholder="Awesome dogs" local-class="search-input {{if @active "active"}}"
+      class="search-input" {{on "keyup" this.onEnterKey}}
+      value={{this.query}} oninput={{action (mut this.query) value="target.value"}}
+  />
+  <button
+    {{on "click" this.submit}}
+    local-class="search-button {{if @active "active"}}"
+    class="search-button {{if @active "active"}}"
+  />
+
+  <div local-class="search-parameters {{if @active "active"}}">
+    <button local-class="close">
+      <img src="/images/close.svg" {{on "click" @close }} width="24" height="24"/>
+    </button>
+    <fieldset>
+      <label for="header-search-form-limit" local-class="legend">Limit</label>
+      <input type="text" name="limit" id="header-search-form-limit"
+             value={{this.limit}} oninput={{action (mut this.limit) value="target.value"}}
+      />
+    </fieldset>
+    <fieldset>
+      <label for="header-search-form-offset" local-class="legend">Offset</label>
+      <input type="text" name="offset" id="header-search-form-offset"
+             value={{this.offset}} oninput={{action (mut this.offset) value="target.value"}}/>
+    </fieldset>
+    <fieldset>
+      <legend>Rating</legend>
+      <label for="header-search-form-g" class="control control-checkbox">
+        <input type="radio" id="header-search-form-g"
+               checked={{eq this.rating "g"}} onclick={{action (mut this.rating) "g"}}
+        />
+        <span class="control-indicator"></span>
+        <span class="label">G</span>
+      </label>
+      <label class="control control-checkbox">
+        <input type="radio" id="header-search-form-pg"
+               checked={{eq this.rating "pg"}} onclick={{action (mut this.rating) "pg"}}
+        />
+        <span class="control-indicator"></span>
+        <span class="label">PG</span>
+      </label>
+      <label class="control control-checkbox">
+        <input type="radio" id="header-search-form-pg-13"
+               checked={{eq this.rating "pg-13"}} onclick={{action (mut this.rating) "pg-13"}}
+        />
+        <span class="control-indicator"></span>
+        <span class="label">PG-13</span>
+      </label>
+      <label class="control control-checkbox">
+        <input type="radio" id="header-search-form-r" value="r"
+               checked={{eq this.rating "r"}} onclick={{action (mut this.rating) "r"}}/>
+        <span class="control-indicator"></span>
+        <span class="label">R</span>
+      </label>
+    </fieldset>
+    <fieldset local-class="language">
+      <label for="header-search-form-language" local-class="legend">Language</label>
+      <OneWaySelect
+          id="header-search-form-language"
+          @options={{this.languages}}
+          @onchange={{action (mut this.lang) value='target.value'}}
+          @optionTargetPath="value"
+          @optionLabelPath="label"
+      />
+    </fieldset>
+  </div>
+
+</div>

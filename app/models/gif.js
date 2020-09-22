@@ -6,9 +6,9 @@ export default class GifModel extends Model {
   @attr('string') slug;
   @attr('string') username;
   @attr('string') sourceUrl;
-  @attr('url') source_post_url;
   @attr('date') createdAt;
-  @attr('string') updatedAt;
+  @attr('date') updatedAt;
+  @attr('date') trendingDate;
   @attr('string') rating;
   @attr('array') tags;
   @attr('array') images;

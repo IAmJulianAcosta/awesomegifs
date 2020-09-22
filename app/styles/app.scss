@@ -1,0 +1,27 @@
+@import "reset";
+@import "variables";
+@import "theme";
+@import "forms";
+
+body {
+  width: 90%;
+  padding-top: 50px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 576px) {
+    & {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}
+
+main {
+  margin-top: 20px;
+  @media screen and (max-width: 576px) {
+    & {
+      margin-top: 0;
+      padding: 0 10px;
+    }
+  }
+}

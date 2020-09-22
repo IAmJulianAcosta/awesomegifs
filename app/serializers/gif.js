@@ -1,6 +1,17 @@
 import JSONAPISerializer from '@ember-data/serializer/json-api';
 
 export default class GifSerializer extends JSONAPISerializer {
+  normalizeFindRecordResponse(store, primaryModelClass, payload) {
+    const includedIndex = [];
+    const included = [];
+    const normalizedRecord = this.payloadToGif(payload.data, includedIndex, included);
+    return {
+      data: normalizedRecord,
+      included,
+      meta: payload.meta
+    };
+  }
+
   normalizeQueryResponse(store, primaryModelClass, payload) {
     const includedIndex = [];
     const included = [];
@@ -15,6 +26,8 @@ export default class GifSerializer extends JSONAPISerializer {
   }
 
   payloadToGif(record, includedIndex, included) {
+    this.removeAuthor(record);
+
     const gif = {
       id: record.id,
       type: 'gif',
@@ -41,6 +54,15 @@ export default class GifSerializer extends JSONAPISerializer {
     }
 
     return gif;
+  }
+
+  removeAuthor(record) {
+    const titleRegex = new RegExp('(.*) GIF by [A-Za-z0-9]*');
+    const matches = record.title.match(titleRegex);
+
+    if (matches && matches.length > 1) {
+      record.title = matches[1];
+    }
   }
 
   addUserToPayload(gif, user, included, includedIndex) {

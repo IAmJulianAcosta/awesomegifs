@@ -1,0 +1,36 @@
+<article local-class="single-gif" class="single-gif">
+  <h1 local-class="gif-title">{{@gif.title}}</h1>
+  {{#with @gif.images.original_mp4 as |mp4|}}
+    <video width="{{mp4.width}}" height="{{mp4.height}}"  loop>
+      <source src="{{mp4.mp4}}" type="video/mp4">
+      <img width="{{mp4.width}}" height="{{mp4.height}}" src="{{mp4.url}}"
+           alt={{gif.title}} />
+    </video>
+  {{/with}}
+  {{#with @gif.user as |user|}}
+    <a href={{user.profileUrl}} target="_blank">
+      <section local-class="user-information">
+        <div local-class="picture">
+          <img src={{user.avatarUrl}} alt={{user.displayName}} />
+        </div>
+        <div local-class="name">
+          {{user.displayName}}
+        </div>
+      </section>
+    </a>
+  {{/with}}
+  <section local-class="gif-information" class="gif-information">
+    <dl>
+      {{#with @gif.trendingDate as |trendingDate|}}
+        <dd>Trending at:</dd>
+        <dt>
+          {{moment-format trendingDate 'MMMM Do YYYY'}}
+        </dt>
+      {{/with}}
+      <dd>Rating:</dd>
+      <dt>
+        {{@gif.rating}}
+      </dt>
+    </dl>
+  </section>
+</article>

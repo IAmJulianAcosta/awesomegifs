@@ -1,0 +1,84 @@
+.control {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5px;
+  font-family: 'Baloo Tammudu 2', cursive;
+  font-size: 16px;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  input:checked ~ .control-indicator {
+    background: var(--dark-pink);
+    &:after {
+      display: block;
+    }
+  }
+
+  &:hover input:not([disabled]):checked ~ .control-indicator,
+  input:checked:focus ~ .control-indicator {
+    background: var(--dark-pink);
+  }
+
+  &:hover input ~ .control-indicator,
+  input:focus ~ .control-indicator {
+    background: #cccccc;
+  }
+
+  $size: 20px;
+  .control-indicator {
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border-radius: $size / 2;
+    position: relative;
+    margin-right: 5px;
+
+    &:after {
+      left: 8px;
+      top: 4px;
+      width: 3px;
+      height: 8px;
+      border: solid #ffffff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      box-sizing: unset;
+      content: '';
+      position: absolute;
+      display: none;
+    }
+  }
+
+  .label {
+    padding-top: 7px;
+  }
+}
+
+select {
+  height: 30px;
+  padding: 0px 10px;
+
+}
+input[type="text"] {
+  height: 20px;
+  padding: 10px 10px 0;
+}
+
+input[type="text"], select {
+  font-family: 'Baloo Tammudu 2', sans-serif;
+  font-size: 20px;
+
+  border-radius: 3px;
+  border: solid thin var(--dark-cyan);
+  appearance: unset;
+  outline: none;
+
+  &:focus {
+    border: solid thin var(--dark-cyan);
+  }
+}

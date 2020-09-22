@@ -1,5 +1,5 @@
 import EmberRouter from '@ember/routing/router';
-import config from 'soapbox/config/environment';
+import config from 'awesome-gifs/config/environment';
 
 export default class Router extends EmberRouter {
   location = config.locationType;
@@ -7,4 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
+  this.route('gifs', function() {
+    this.route('gif', { path: ':id'});
+  });
 });

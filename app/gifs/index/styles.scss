@@ -1,0 +1,91 @@
+h1.title {
+  font-family: "Fredoka One", sans-serif;
+  font-size: 32px;
+  color: var(--cyan);
+  font-weight: normal;
+  margin-bottom: 0.5em;
+  text-align: right;
+  @media screen and (max-width: 576px) {
+    & {
+      margin-top: 10px;
+    }
+  }
+}
+
+h2.empty {
+  font-family: "Fredoka One", sans-serif;
+  font-size: 24px;
+  color: white;
+}
+
+.gifs-list-item {
+  margin: 0px 20px 20px 0;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 576px) {
+    & {
+      margin: 0 0 20px;
+    }
+  }
+}
+
+.gifs-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 576px) {
+    & {
+      justify-content: center;
+    }
+  }
+}
+
+.gif {
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gif:hover {
+  .gif-information {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+.gif-information {
+  transition: all 0.5s;
+  width: 100%;
+  position: absolute;
+  bottom: -50px;
+  padding: 10px 10px;
+  font-family: 'Baloo Tammudu 2', sans-serif;
+  background: hsla(0, 0, 0, 0.75);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  opacity: 0;
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .user {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .title, .user {
+    padding-top: 4px; //Weird font lineheight
+  }
+
+}
+
+.close {
+  color: white;
+  cursor: pointer;
+}

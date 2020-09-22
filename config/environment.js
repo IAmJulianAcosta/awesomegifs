@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'soapbox',
+    modulePrefix: 'awesome-gifs',
     environment,
     rootURL: '/',
     locationType: 'auto',

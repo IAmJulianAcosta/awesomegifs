@@ -1,0 +1,38 @@
+.gif:hover {
+  .gif-information {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+.gif-information {
+  transition: all 0.5s;
+  width: 100%;
+  position: absolute;
+  bottom: -50px;
+  padding: 10px 10px;
+  font-family: 'Baloo Tammudu 2', sans-serif;
+  background: hsla(0, 0, 0, 0.75);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  opacity: 0;
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .user {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .title, .user {
+    padding-top: 4px; //Weird font lineheight
+  }
+
+}
+

@@ -1,0 +1,21 @@
+<LinkTo @route="gifs.gif" @model={{@gif.id}} local-class="gif" class="gif">
+  <figure>
+    {{#with @gif.images.fixed_height as |downsampled|}}
+      <video width="{{downsampled.width}}" height="{{downsampled.height}}" autoplay loop>
+        <source src="{{downsampled.mp4}}" type="video/mp4">
+        <img width="{{downsampled.width}}" height="{{downsampled.height}}" src="{{downsampled.url}}"
+             alt={{gif.title}}/>
+      </video>
+    {{/with}}
+    <figcaption local-class="gif-information">
+      <p local-class="title">
+        {{@gif.title}}
+      </p>
+      {{#with @gif.user as |user|}}
+        <p local-class="user">
+          {{user.displayName}}
+        </p>
+      {{/with}}
+    </figcaption>
+  </figure>
+</LinkTo>

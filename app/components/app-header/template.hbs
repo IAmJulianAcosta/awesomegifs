@@ -1,0 +1,8 @@
+<nav id="main-header" local-class="main-header">
+  <AppHeader::Logo @short={{this.searching}} />
+  <AppHeader::Search
+    @active={{this.searching}}
+    @searchButtonClicked={{action this.onSearchButtonClicked}}
+    @close={{action (set this.searching) false}}
+  />
+</nav>

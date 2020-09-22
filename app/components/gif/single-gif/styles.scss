@@ -1,0 +1,75 @@
+.single-gif {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 480px;
+
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.user-information {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.picture {
+  margin-right: 16px;
+  > img {
+    max-height: 48px;
+  }
+}
+
+.name {
+  font-size: 36px;
+  flex-grow: 1;
+  text-align: left;
+
+  &:after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-image: url(/images/external-link-symbol.svg);
+    display: inline-block;
+    background-position: 0 0;
+    background-size: 18px 18px;
+    position: relative;
+    top: 0px;
+  }
+}
+
+.external-link-icon {
+  width: 24px;
+  position: relative;
+  left: 4px;
+  top: 4px
+}
+
+.gif-title {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 32px;
+  margin: 0.5em 0;
+}
+
+.gif-information, .user-information {
+  font-family: 'Baloo Tammudu 2', sans-serif;
+  color: white;
+  text-align: left;
+
+  strong, dd {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0.5em 0 0.125em 0;
+  }
+}
+
+.gif-information {
+  margin-top: 0.5em;
+  font-size: 18px;
+}
