@@ -1,0 +1,20 @@
+<div class="gifs"
+  {{did-insert @querySearchGifs}}
+>
+  <h1 local-class="title" class="title">
+    {{#if @query}}
+      {{@query}} GIFs [<span local-class="close" class="close" onclick={{action @clear}}>x</span>]
+    {{else}}
+      Trending GIFs
+    {{/if}}
+  </h1>
+  <ul local-class="gifs-list">
+    {{#each @gifs as |gif|}}
+      <li local-class="gifs-list-item">
+        <Gif::GifGrid @gif={{gif}} />
+      </li>
+    {{else}}
+      <h2 local-class="empty">No gifs for {{@query}}</h2>
+    {{/each}}
+  </ul>
+</div>

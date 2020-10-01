@@ -13,19 +13,24 @@ export default class GifsRoute extends Route {
     this.searchParams.lang = lang;
 
     if('string' === typeof query && query !== '') {
-      return this.store.query('gif', {
-        type: 'all',
-        query: query,
-        offset: !isNaN(offset) ? offset : 0,
-        limit: !isNaN(limit) ? limit : 25,
-        rating: ['g', 'pg', 'pg-13', 'r'].includes(rating) ? rating : 'g',
-        lang: 'string' === typeof lang ? lang : 'en',
-      });
+      let trendingGifs = this.store.peekAll('gif');
+
+      if (!trendingGifs.length) {
+        trendingGifs = await this.fetchTrending();
+      }
+
+      return trendingGifs.filter(gif => {
+        return !!gif.title.toLowerCase().includes(query.toLowerCase());
+      })
     }
 
+    return this.fetchTrending();
+  }
+
+  fetchTrending() {
     return this.store.query('gif', {
       type: 'trending',
-      limit: 25,
+      limit: 50,
       rating: 'g',
     });
   }

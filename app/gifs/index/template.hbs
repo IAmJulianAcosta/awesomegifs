@@ -1,18 +1,6 @@
-<div class="gifs">
-  <h1 local-class="title" class="title">
-  {{#if this.query}}
-    {{this.query}} GIFs [<span local-class="close" class="close" onclick={{action this.clear}}>x</span>]
-  {{else}}
-    Trending GIFs
-  {{/if}}
-  </h1>
-  <ul local-class="gifs-list">
-    {{#each model as |gif|}}
-      <li local-class="gifs-list-item">
-        <Gif::GifGrid @gif={{gif}} />
-      </li>
-    {{else}}
-      <h2 local-class="empty">No gifs for {{this.query}}</h2>
-    {{/each}}
-  </ul>
-</div>
+<GifsIndex
+  @query={{this.query}}
+  @gifs={{this.gifs}}
+  @clear={{this.clear}}
+  @querySearchGifs={{this.querySearchGifs}}
+/>
